@@ -4,5 +4,6 @@
   </p>
   <span>Created at: {{ joke.created_at | date : "shortDate" }}</span>
   <span>Category: {{ joke.categories }}</span>
+  <div><button (click)="addToList(joke)">Add to List</button></div>
 </ng-container>
 <ng-template #noData>No Date Available</ng-template>

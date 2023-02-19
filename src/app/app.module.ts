@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { SearchComponent } from './search/search.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JokeListComponent } from './joke-list/joke-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     JokeComponent,
     ContainerComponent,
     SearchComponent,
+    JokeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     {

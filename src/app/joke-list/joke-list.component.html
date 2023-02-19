@@ -1,0 +1,42 @@
+<ul>
+  <li *ngFor="let joke of jokesList$ | async">
+    <div class="item">
+      <div>
+        <span *ngIf="selectedJokeId !== joke.id">{{ joke.value }}</span>
+        <input
+          type="text"
+          *ngIf="selectedJokeId === joke.id"
+          [value]="joke.value"
+          #input
+        />
+      </div>
+
+      <div *ngIf="joke.categories?.length; else ngCategories">
+        {{ joke.categories }}
+      </div>
+      <div>
+        <button
+          (click)="edit(joke.id)"
+          *ngIf="selectedJokeId !== joke.id"
+          [disabled]="selectedJokeId"
+        >
+          Edit
+        </button>
+        <button
+          (click)="saveEdit(joke.id, joke)"
+          *ngIf="selectedJokeId == joke.id"
+        >
+          ✅
+        </button>
+        <button (click)="cancelEdit()" *ngIf="selectedJokeId == joke.id">
+          Cancel
+        </button>
+        <button (click)="deleteJoke(joke.id)" [disabled]="selectedJokeId">
+          delete
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<ng-template #ngCategories> <div>No Category</div> </ng-template>

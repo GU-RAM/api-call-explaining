@@ -11,7 +11,7 @@ import {
   switchMap,
 } from 'rxjs';
 import { ChuckApiService } from '../chuck-api.service';
-import { QueryResult } from '../chuck.model';
+import { Joke, QueryResult } from '../chuck.model';
 
 @Component({
   selector: 'app-search',
@@ -37,20 +37,25 @@ export class SearchComponent implements OnInit {
     return of(empty);
   }
 
+  addToList(joke: Joke) {
+    this.apiService
+      .saveJoke(joke)
+      .subscribe(() => this.toastr.success('Joke has been added'));
+  }
+
   ngOnInit(): void {
     this.result$ = this.search.valueChanges.pipe(
       debounceTime(500),
       distinctUntilChanged(),
       switchMap((query) => {
         if (query.length > 3 && query.length < 120) {
-          console.log(this.apiService.searchJoke(query));
           return this.apiService.searchJoke(query);
         }
 
         return this.getEmptyResult();
       }),
       catchError((error: HttpErrorResponse) => {
-        this.toastr.error(error.message);
+        this.toastr.error(error.error.message);
 
         return this.getEmptyResult();
       })
