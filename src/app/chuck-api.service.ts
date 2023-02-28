@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Joke, QueryResult } from './chuck.model';
+import { Joke, QueryResult, Permission } from './chuck.model';
 import { API_BASE } from './token';
 
 @Injectable({
@@ -50,5 +50,13 @@ export class ChuckApiService {
   deleteJoke(id: string) {
     console.log('me');
     return this.http.delete(`${environment.jsonServerBase}/jokes/${id}`);
+  }
+
+  getPermission() {
+    const permission: Permission = {
+      canRandomJoke: true,
+    };
+
+    return of(permission).pipe(delay(2000));
   }
 }

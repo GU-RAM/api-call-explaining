@@ -12,5 +12,9 @@ export class ContainerComponent {
 
   constructor(private apiService: ChuckApiService) {}
 
+  click() {
+    console.log('click');
+  }
+
   ngOnInit(): void {}
 }

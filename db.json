@@ -39,6 +39,26 @@
       "updated_at": "2020-01-05 13:42:19.324003",
       "url": "https://api.chucknorris.io/jokes/55d0aCZ9TOejWz68jUa4vg",
       "value": "This year's Chuck Norris Super Sunday Super Bowl party was catered by Chick-fil-A and all other party items delivered by Hobby Lobby"
+    },
+    {
+      "categories": [
+        "food"
+      ],
+      "created_at": "2020-01-05 13:42:18.823766",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "nIEoobK5RN-HHhbHbGf-_Q",
+      "updated_at": "2020-01-05 13:42:18.823766",
+      "url": "https://api.chucknorris.io/jokes/nIEoobK5RN-HHhbHbGf-_Q",
+      "value": "Chuck Norris' idea of fast food is chasing down a Cheetah and cooking to up on his BBQ."
+    },
+    {
+      "categories": [],
+      "created_at": "2020-01-05 13:42:18.823766",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "RF3_YjYlS_SufzREhV1NUQ",
+      "updated_at": "2020-01-05 13:42:18.823766",
+      "url": "https://api.chucknorris.io/jokes/RF3_YjYlS_SufzREhV1NUQ",
+      "value": "Chuck Norris loves all that shit Andrew Zimmern eats on bizzare foods."
     }
   ]
 }

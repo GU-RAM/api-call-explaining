@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './container/container.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { JokeComponent } from './joke/joke.component';
+import { PersmissionResolver } from './permission.resolver';
 import { RandomJokeComponent } from './random-joke/random-joke.component';
 import { SearchComponent } from './search/search.component';
 
@@ -14,6 +15,9 @@ const routes: Routes = [
   {
     path: 'random',
     component: RandomJokeComponent,
+    resolve: {
+      permissions: PersmissionResolver,
+    },
   },
   {
     path: 'category/:category',
