@@ -21,6 +21,5 @@ export class RandomJokeComponent {
 
   ngOnInit(): void {
     this.persmission = this.activatedRoute.snapshot.data['permissions'];
-    console.log(this.activatedRoute.snapshot.data['permissions']);
   }
 }
